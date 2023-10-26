@@ -1,11 +1,10 @@
 import type { LoaderFunctionArgs, ActionFunctionArgs } from "@remix-run/node";
 import type { FunctionComponent } from "react";
+import type { ContactRecord } from "../data";
 import { json } from "@remix-run/node";
 import { Form, useLoaderData, useFetcher } from "@remix-run/react";
 import invariant from "tiny-invariant";
 import { getContact, updateContact } from "../data";
-
-import type { ContactRecord } from "../data";
 
 export const loader = async ({
     params,
@@ -30,7 +29,6 @@ export default function Contact() {
                     src={contact.avatar}
                 />
             </div>
-
             <div>
                 <h1>
                     {contact.first || contact.last ? (
@@ -39,10 +37,9 @@ export default function Contact() {
                         </>
                     ) : (
                         <i>No Name</i>
-                    )}{" "}
+                    )}
                     <Favorite contact={contact} />
                 </h1>
-
                 {contact.twitter ? (
                     <p>
                         <a

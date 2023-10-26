@@ -4,9 +4,7 @@ import { Form, useLoaderData, useNavigate } from "@remix-run/react";
 import invariant from "tiny-invariant";
 import { getContact, updateContact } from "../data";
 
-export const loader = async ({
-    params,
-}: LoaderFunctionArgs) => {
+export const loader = async ({ params }: LoaderFunctionArgs) => {
     invariant(params.contactId, "Missing contactId param");
     const contact = await getContact(params.contactId);
     if (!contact) {

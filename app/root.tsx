@@ -23,7 +23,6 @@ export const links: LinksFunction = () => [
   { rel: "stylesheet", href: appStylesHref },
 ];
 
-
 export const loader = async ({
   request,
 }: LoaderFunctionArgs) => {
@@ -107,7 +106,7 @@ export default function App() {
                         </>
                       ) : (
                         <i>No Name</i>
-                      )}{" "}
+                      )}
                       {contact.favorite ? (
                         <span>★</span>
                       ) : null}
